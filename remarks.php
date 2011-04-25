@@ -1,8 +1,8 @@
 <?php
 /*
 	Plugin Name: Remarks
-	Plugin URI: http://www.frag1.co.uk/development_hub/remarks
-	Description: Analyse the number of comments you get by category and author.
+	Plugin URI: http://www.frag1.co.uk/development_hub
+	Description: Analyse the number of comments you get by post, category and author. Uses graphs!
 	Version: 1.0
 	Author: Frag1 John
 	Author URI: http://www.frag1.co.uk

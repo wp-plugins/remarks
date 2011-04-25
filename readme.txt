@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: Frag1 John
-Donate link: http://kiva.com, http://naku.dohcrew.com/libchart/pages/introduction/
+Donate link: http://kiva.com
 Tags: comments, remarks, meta, metrics, information, analysis
 Requires at least: WP 3.1.1, GD Package
 Tested up to: 3.1.1
@@ -36,18 +36,11 @@ The PHP drawing package GD is required. Please contact your web administrator fo
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This is the second screen shot
 
 == Changelog ==
 
-= 1.0 =
-
 
 == Upgrade Notice ==
-
-No upgrades yet! come back soon...
 
 == Intended Future Developments ==
 
@@ -55,4 +48,3 @@ No upgrades yet! come back soon...
 2. Line charts to show the number of posts over time.
 3. A globe showing the location of the majority of your commenters (based on their IP!)
 
-`<?php code(); // goes in backticks ?>`
