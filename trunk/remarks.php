@@ -3,7 +3,7 @@
 	Plugin Name: Remarks
 	Plugin URI: http://www.frag1.co.uk/development_hub
 	Description: Analyse the number of comments you get by post, category and author. Uses graphs!
-	Version: 1.0
+	Version: 1.1
 	Author: Frag1 John
 	Author URI: http://www.frag1.co.uk
 	License: GPL2
@@ -47,7 +47,7 @@ function wrapper(){
 
 function remarks_main(){
 	global $wpdb;
-	echo "<style type='text/css' >#wpbody-content {background-color: #FFF}</style>";
+    echo "<style type='text/css' >#wpbody-content {background-color: #FFF; padding-left:15px} td {padding-left:20px; max-width:300px}</style>";
 
 	echo '<h2>Remarks</h2>';
 		
@@ -57,30 +57,47 @@ $query = "SELECT count(comment_approved) comments_count FROM $wpdb->comments whe
 $query_results = $wpdb->get_row($query, ARRAY_A);  
 
 IF ($query_results  == FALSE){
-echo "Database couldn't be reached, or 0 approved comments in total<br/>";
+	echo "Database couldn't be reached, or 0 approved comments in total<br/>";
 }
 ELSE {
-echo $query_results['comments_count']." approved comments in total<br/>";
+	echo $query_results['comments_count']." approved comments in total<br/>";
 }
 
-populatePostMatrix();
-renderPostMatrix();
+include dirname(__FILE__)."/buttonFunctionality.js";
+
+echo '<button id="post_button"  onclick="show(\'post_div\', \'post_button\'); hide(\'category_div\', \'category_button\'); hide(\'author_div\', \'author_button\');">Show Comments by Post</button>';
+echo '<button id="category_button" onclick="hide(\'post_div\', \'post_button\'); show(\'category_div\', \'category_button\'); hide(\'author_div\', \'author_button\');">Show Comments by Category</button>';
+echo '<button id="author_button"  onclick="hide(\'post_div\', \'post_button\'); hide(\'category_div\', \'category_button\'); show(\'author_div\', \'author_button\');">Show Comments by Author</button>';
+echo '<button id="all_button" disabled="true" onclick="showAll();">Show All</button>';
+
+echo "<div id='post_div'>";
+    populatePostMatrix();
+    renderPostMatrix();
 echo "<br/>";
-populateCategoryMatrix();
-renderCategoryMatrix();
-echo "<br/>";
-drawCategoriesBars();
-echo "<br/>";
-drawCategoriesPie();
-echo "<br/>";
-echo "<br/>";
-populateAuthorMatrix();
-renderAuthorMatrix();
-echo "<br/>";
-drawAuthorsBars();
-echo "<br/>";
-drawAuthorsPie();
+echo "</div>";
+
+
+echo "<div id='category_div'>";
+    populateCategoryMatrix();
+    renderCategoryMatrix();
+    echo "<br/>";
+    drawCategoriesBars();
+    echo "<br/>";
+    drawCategoriesPie();
+    echo "<br/>";
+echo "</div>";
+
+
+echo "<div id='author_div'>";
+    populateAuthorMatrix();
+    renderAuthorMatrix();
+    echo "<br/>";
+    drawAuthorsBars();
+    echo "<br/>";
+    drawAuthorsPie();
+echo "</div>";
 
 echo "<br/><br/>";
+echo "Questions? Comments? Thoughts? Feedback? Leave them <a href='http://www.frag1.co.uk/blog/?p=337'>here</a>.";
 }
 ?>

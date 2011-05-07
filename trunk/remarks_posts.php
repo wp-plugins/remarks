@@ -3,21 +3,32 @@ function matchPostCategory (INT $id, INT $category){
 
 }
 
-
+function categoriesLinks($arrayOfCategoryIndices){
+$outputString = "";
+    foreach ($arrayOfCategoryIndices as $categoryIndex){
+	$outputString .= "<a href='" . get_category_link($categoryIndex) . "'>" . get_cat_name($categoryIndex) .  "</a>, ";
+    }  
+    return substr($outputString, 0, strlen($outputString)-2);
+}
 
 function renderPostMatrixRow($ID){
 global $remarks_posts;
-	echo "<a href='".$remarks_posts[$ID]['guid']."' >".$remarks_posts[$ID]['title'] . "</a>: ". $remarks_posts[$ID]['count']. " comments<br/>";
-}  
+	echo "<tr>";
+    echo "<td><a href='".$remarks_posts[$ID]['guid']."' >".$remarks_posts[$ID]['title'] . "</a></td><td>". $remarks_posts[$ID]['count']. " comments</td><td>". categoriesLinks($remarks_posts[$ID]['categories']). "</td><td>". $remarks_posts[$ID]['author']. "</td>";
+	echo "</tr>";
+}
 
 
 
 function renderPostMatrix(){
 global $remarks_posts;
 	echo "<h3>Number of Comments per Post</h3>";
+    echo "<table>";
+    echo "<tr><td><strong>Post Name</strong></td><td><strong>Number of Comments</strong></td><td><strong>Category(s)</strong></td><td><strong>Author</strong></td></tr>";
 	foreach ($remarks_posts as $eachPostIndex => $eachPost){
 		renderPostMatrixRow( $eachPostIndex);
 	}
+    echo "</table>";
 }
 
 
