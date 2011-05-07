@@ -4,7 +4,7 @@ Donate link: http://kiva.com
 Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis
 Requires at least: WP 3.1.1, GD Package
 Tested up to: 3.1.1
-Stable tag: trunk
+Stable tag: 1.1
 
 Graph, charts, and lists breakdown of comments by post author and category.
 
@@ -52,6 +52,11 @@ The PHP drawing package GD is required. Please contact your web administrator fo
 
 == Changelog ==
 
+= 1.1 =
+* Layed out data in table format 
+* Added dashboard buttons to show data in sections
+
 
 == Upgrade Notice ==
-
+= 1.1 =
+This upgrade gives Remarks buttons to show and hide the data in sections. The data is also laid out in an ultra-clear table format.
