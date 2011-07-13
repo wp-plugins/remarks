@@ -4,7 +4,7 @@ Donate link: http://kiva.com
 Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis, geolocation, comment locations, comment geolocations
 Requires at least: WP 3.1.1, GD Package
 Tested up to: 3.1.1
-Stable tag: 1.1
+Stable tag: 1.2
 
 Graph, charts, geolocations, and lists of comments by post author and category.
 
