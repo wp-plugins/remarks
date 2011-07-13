@@ -4,7 +4,7 @@ Donate link: http://kiva.com
 Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis
 Requires at least: WP 3.1.1, GD Package
 Tested up to: 3.1.1
-Stable tag: 1.1
+Stable tag: 1.2
 
 Graph, charts, and lists breakdown of comments by post author and category.
 
