@@ -5,7 +5,7 @@
 function renderCategoryMatrixRow($categoryID){
 	global $remarks_categories;
 	
-    echo "<tr><td><a href =".get_bloginfo('url').'/?category_name='.$remarks_categories[$categoryID]['slug'].">".$remarks_categories[$categoryID]['name']."</a></td><td>".$remarks_categories[$categoryID]['count']." comments</td><td>".$remarks_categories[$categoryID]['numPosts']." posts</td></tr>";
+    echo "<tr><td><a href =".get_bloginfo('url').'/?category_name='.$remarks_categories[$categoryID]['slug'].">".$remarks_categories[$categoryID]['name']."</a></td><td align='center'>".$remarks_categories[$categoryID]['count']." comments</td><td align='center'>".$remarks_categories[$categoryID]['numPosts']." posts</td></tr>";
 	
 }
 

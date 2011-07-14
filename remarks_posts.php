@@ -14,7 +14,7 @@ $outputString = "";
 function renderPostMatrixRow($ID){
 global $remarks_posts;
 	echo "<tr>";
-    echo "<td><a href='".$remarks_posts[$ID]['guid']."' >".$remarks_posts[$ID]['title'] . "</a></td><td>". $remarks_posts[$ID]['count']. " comments</td><td>". categoriesLinks($remarks_posts[$ID]['categories']). "</td><td>". $remarks_posts[$ID]['author']. "</td>";
+    echo "<td><a href='".$remarks_posts[$ID]['guid']."' >".$remarks_posts[$ID]['title'] . "</a></td><td align='center'>". $remarks_posts[$ID]['count']. " comments</td><td>". categoriesLinks($remarks_posts[$ID]['categories']). "</td><td align='center'>". $remarks_posts[$ID]['author']. "</td>";
 	echo "</tr>";
 }
 
