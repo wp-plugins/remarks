@@ -67,5 +67,12 @@ The PHP drawing package GD is required. Please contact your web administrator fo
 
 
 == Upgrade Notice ==
+= 1.3 =
+* Moved away from HostIP to FreeGeoIP. This resulted in a greater number of non UK posts being geolocated correctly (100% of our sample was placed right).
+* Fixed a minor bug with the geolocation button.
+
+= 1.2 =
+Added a geolocation section. You can now find out which countries and cities host your biggest contributors.
+
 = 1.1 =
 This upgrade gives Remarks buttons to show and hide the data in sections. The data is also laid out in an ultra-clear table format.
