@@ -1,16 +1,16 @@
 === Plugin Name ===
 Contributors: Frag1 John
 Donate link: http://kiva.com
-Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis
+Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis, geolocation, comment locations, comment geolocations, community
 Requires at least: WP 3.1.1, GD Package
-Tested up to: 3.1.1
-Stable tag: 1.2
+Tested up to: 3.4.2
+Stable tag: 1.3
 
-Graph, charts, and lists breakdown of comments by post author and category.
+Graph, charts, geolocations, and lists of comments by post author and category.
 
 == Description ==
 
-Remarks gives a useful visual breakdown of the comments that your blog has acquired, and may help you to decide how to focus your blog for even greater comment harvesting. The breakdown that Remarks produces is accessible via the WordPress Admin menu.
+Remarks gives useful charts, tables, and geolocations of your blog's comments, and may help you to decide how to focus your blog for even greater comment harvesting. The breakdown that Remarks produces is accessible via the WordPress Admin menu.
 
 Hi, thanks for examining Remarks! First props have to go to the genius behind libchart http://naku.dohcrew.com/libchart/pages/introduction/. I'll be honest, I have made some minor cosmetic changes to his code, to make colours consistent and to remove some things that weren't desired for our purpose. 
 
@@ -20,9 +20,7 @@ Enjoy! Oh, and *all* feedback is really appreciated - please mail to john HAT fr
 
 Intended Future Developments:
 
-1. Different pages for each breakdown by Author or Category.
-2. Line charts to show the number of posts over time.
-3. A globe showing the location of the majority of your commenters (based on their IP!)
+1. Line charts to show the number of posts over time.
 
 
 == Installation ==
@@ -50,10 +48,21 @@ The PHP drawing package GD is required. Please contact your web administrator fo
 
 3. This screen shows the entire Comments by Author section of the Remarks output for the frag1.co.uk site. 
 
+4. This screen shows the latest Geolocation of comments section.
+
 == Changelog ==
 
+= 1.3 =
+* Moved away from hostIP to FreeGeoIP. This resulted in a greater number of non UK posts being geolocated correctly (100% of our sample was placed right).
+* Minor changes based on feedback.
+* Reworked the buttons system to reduce code duplication and ease maintainability.
+
+= 1.2 =
+* Added a geolocation section. You can now find out which countries and cities host your biggest contributors.
+* Other changes based on feedback.
+
 = 1.1 =
-* Layed out data in table format 
+* Laid out data in table format 
 * Added dashboard buttons to show data in sections
 
 
