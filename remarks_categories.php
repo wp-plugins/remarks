@@ -86,7 +86,7 @@ function populateCategoryMatrix(){
 function drawCategoriesBars(){
 	global $remarks_categories;
 
-	$URL = get_bloginfo("url").'/wp-content/plugins/remarks/remarks_barchart.php?';
+	$URL = home_url().'/wp-content/plugins/remarks/remarks_barchart.php?';
 	foreach ($remarks_categories as $category){
 		$URL = $URL.$category['name']."=".$category['count']."&";
 	}
@@ -99,7 +99,7 @@ function drawCategoriesBars(){
 function drawCategoriesPie(){
 	global $remarks_categories;
 
-	$URL = get_bloginfo("url").'/wp-content/plugins/remarks/remarks_piechart.php?';
+	$URL = home_url().'/wp-content/plugins/remarks/remarks_piechart.php?';
 	foreach ($remarks_categories as $category){
 		$URL = $URL.$category['name']."=".$category['count']."&";
 	}

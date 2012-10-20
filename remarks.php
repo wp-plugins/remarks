@@ -64,8 +64,7 @@ function comment_changes($commentID, $status){
 
 function remarks_main(){
 	global $wpdb;
-	$url = get_bloginfo('url');
-	echo "<link rel='stylesheet' type='text/css' href='".$url."/wp-content/plugins/remarks/remarks.css'/>";
+	echo "<link rel='stylesheet' type='text/css' href='".home_url()."/wp-content/plugins/remarks/remarks.css'/>";
 	include dirname(__FILE__)."/buttonFunctionality.js";
 	echo '<h2>Remarks</h2>';
 		
