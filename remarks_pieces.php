@@ -1,7 +1,3 @@
-<!-- 
-     Remarks Wordpress plugin
-     This file contains functions for commonly used bits and bobs, to prevent code reuse
--->
 <?php
 
      /* POPULATE */
