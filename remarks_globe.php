@@ -33,8 +33,6 @@ function Geolocation_InsertCommentLocation($commentID, $country, $city, $latitud
 
 	$sql = "INSERT INTO $wpdb->remarks_comments VALUES ($commentID".', \''.$city.'\', \''.$country.'\', '.$latitude.', '.$longitude.')';
 	
-	echo "ABOUT TO THROW IN $sql";
-	
 	
 	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 	dbDelta($sql);
