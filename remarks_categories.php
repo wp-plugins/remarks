@@ -5,7 +5,7 @@
 function renderCategoryMatrixRow($categoryID){
 	global $remarks_categories;
 	
-	echo "<a href =".get_bloginfo('url').'/?category_name='.$remarks_categories[$categoryID]['slug'].">".$remarks_categories[$categoryID]['name']."</a>: ".$remarks_categories[$categoryID]['count']." comments over ".$remarks_categories[$categoryID]['numPosts']." posts<br/>";
+    echo "<tr><td><a href =".get_bloginfo('url').'/?category_name='.$remarks_categories[$categoryID]['slug'].">".$remarks_categories[$categoryID]['name']."</a></td><td align='center'>".$remarks_categories[$categoryID]['count']." comments</td><td align='center'>".$remarks_categories[$categoryID]['numPosts']." posts</td></tr>";
 	
 }
 
@@ -13,9 +13,12 @@ function renderCategoryMatrix(){
 	global $remarks_categories;
 	
 	echo "<h3>Number of Comments per Category</h3>";
+	echo "<table>";
+    echo "<tr><td><strong>Category Name</strong></a></td><td><strong>Number of Comments</strong></td><td><strong>Number of Posts</strong></td></tr>";
 	foreach($remarks_categories as $categoryKey => $eachCategory){
 		renderCategoryMatrixRow($categoryKey);
 	}
+	echo "</table>";
 }
 
 function populateCategoryMatrixRow($categoryID, $name, $slug){
@@ -44,6 +47,14 @@ function populateCategoryMatrixRow($categoryID, $name, $slug){
 
 
 
+function categoryReorder($a, $b)
+{
+    if ($a['count'] == $b['count']) {
+	return 0;
+    }
+    return ($a['count'] > $b['count']) ? -1 : 1;
+}
+    
 function populateCategoryMatrix(){
 	global $wpdb;
 
@@ -65,13 +76,17 @@ function populateCategoryMatrix(){
 			
 		} 
 	}
+    
+
+    
+    uasort($remarks_categories, "categoryReorder");
 
 } // populateCategoryMatrix
 
 function drawCategoriesBars(){
 	global $remarks_categories;
 
-	$URL = get_bloginfo("url").'/wp-content/plugins/remarks/remarks_barchart.php?';
+	$URL = home_url().'/wp-content/plugins/remarks/remarks_barchart.php?';
 	foreach ($remarks_categories as $category){
 		$URL = $URL.$category['name']."=".$category['count']."&";
 	}
@@ -84,7 +99,7 @@ function drawCategoriesBars(){
 function drawCategoriesPie(){
 	global $remarks_categories;
 
-	$URL = get_bloginfo("url").'/wp-content/plugins/remarks/remarks_piechart.php?';
+	$URL = home_url().'/wp-content/plugins/remarks/remarks_piechart.php?';
 	foreach ($remarks_categories as $category){
 		$URL = $URL.$category['name']."=".$category['count']."&";
 	}
