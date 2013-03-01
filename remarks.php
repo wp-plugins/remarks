@@ -120,7 +120,7 @@ function remarks_main(){
      echo "</div>";
 
      echo "<br/><br/>";
-     echo "Questions? Comments? Thoughts? Feedback? Leave them <a href='http://www.frag1.co.uk/blog/?p=337'>here</a>.";
+     echo "Questions? Comments? Thoughts? Feedback? Leave them <a href='http://www.frag1.co.uk/?p=12'>here</a>.";
 
      globe_Initialise();
 }
