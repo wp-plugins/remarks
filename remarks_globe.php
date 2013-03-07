@@ -102,12 +102,8 @@ function IPtoLocationEntry_HostIP($commentIndex, $eachIP){
 
 function IPtoLocationEntry_FreeGeoIp($commentIndex, $eachIP){
 
-     echo 'IPtoLocationEntry_FreeGeoIp';
-
      $response_raw = file("http://freegeoip.net/csv/$eachIP");
 
-     echo $response_raw['0']."<br>";
-     
      $responseArray = str_getcsv($response_raw['0']);
      
      $country = $responseArray['2'];
