@@ -44,7 +44,7 @@ $remarks_posts[$id] = array( 'title' => $title, 'guid' => $guid, 'categories' =>
 function populatePostMatrix(){
 global $wpdb;
 
-$getCommentedPostsQuery = "SELECT $wpdb->posts.ID as post_ID, $wpdb->posts.post_title, $wpdb->posts.guid, $wpdb->users.user_nicename as post_author, count($wpdb->comments.comment_ID) AS 'count' FROM $wpdb->posts LEFT JOIN $wpdb->comments ON $wpdb->posts.ID=$wpdb->comments.comment_post_id LEFT JOIN $wpdb->users ON $wpdb->users.ID = $wpdb->posts.post_author WHERE post_status = 'publish' AND $wpdb->comments.comment_approved<>'spam' GROUP BY $wpdb->posts.ID ORDER BY count($wpdb->comments.comment_ID) DESC";
+$getCommentedPostsQuery = "SELECT $wpdb->posts.ID as post_ID, $wpdb->posts.post_title, $wpdb->posts.guid, $wpdb->users.user_nicename as post_author, count($wpdb->comments.comment_ID) AS 'count' FROM $wpdb->posts LEFT JOIN $wpdb->comments ON $wpdb->posts.ID=$wpdb->comments.comment_post_id LEFT JOIN $wpdb->users ON $wpdb->users.ID = $wpdb->posts.post_author WHERE post_status = 'publish' AND $wpdb->comments.comment_approved<>'spam' AND $wpdb->comments.comment_approved<>'trash' GROUP BY $wpdb->posts.ID ORDER BY count($wpdb->comments.comment_ID) DESC";
 
 $getUncommentedPostsQuery = "SELECT $wpdb->posts.ID as post_ID, post_title, guid, $wpdb->users.user_nicename AS post_author FROM $wpdb->posts LEFT JOIN $wpdb->users ON $wpdb->posts.post_author = $wpdb->users.ID WHERE post_status = 'publish'";
 

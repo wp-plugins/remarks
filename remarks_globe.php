@@ -103,7 +103,7 @@ function IPtoLocationEntry_HostIP($commentIndex, $eachIP){
 function IPtoLocationEntry_FreeGeoIp($commentIndex, $eachIP){
 
      $response_raw = file("http://freegeoip.net/csv/$eachIP");
-
+     
      $responseArray = str_getcsv($response_raw['0']);
      
      $country = $responseArray['2'];
@@ -194,7 +194,6 @@ function renderGeolocationCommentsTable(){
     
     // draw a table of each city by the number of comments it has
     echo "<h3>Number of Comments by Location</h3>";
-    echo "<em>Geolocation powered by <a href='http://www.freegeoip.net/'>FreeGeoIP</a>.</em><br/><br/>";
 	echo "<table>";
     	echo "<tr><td><strong>Location</strong></a></td><td><strong>Number of Comments</strong></td></tr>";
 	
@@ -215,7 +214,10 @@ function renderMapByComments(){
 			echo "&markers=color:blue|label:$count|$lat,$long";
 		}
 	}
-    echo'&sensor=false"/><br/><em>Map powered by <a href="http://lmgtfy.com/?q=google+map+api">Google Map API</a>.<br/>Unfortunately, the above map may be missing the locations of some of your comments. This is because sometimes it\'s impossible to translate the IP address into a geographic location.</em>';
+    echo '&sensor=false"/><br/><br/>';
+    echo "<em>Geolocation powered by <a href='http://www.freegeoip.net/'>FreeGeoIP</a>.</em><br/>";
+    echo '<em>Map powered by <a href="http://lmgtfy.com/?q=google+map+api">Google Map API</a>.</em><br/>';
+    echo '<em>Unfortunately, the above map may be missing the locations of some of your comments. This is because sometimes it\'s impossible to translate the IP address into a geographic location.</em>';
 
 }
 
