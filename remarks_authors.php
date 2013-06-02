@@ -3,9 +3,7 @@
 function renderAuthorMatrixRow($authorId){
 	global $remarks_authors;
 	
-	$urlOpener = "<tr><td><a href = '".get_bloginfo('url')."/?author=$authorId'>";
-	$name = $remarks_authors[$authorId]['name'];
-    echo $urlOpener.$name."</a></td><td>". $remarks_authors[$authorId]['count']." comments</td><td>".$remarks_authors[$authorId]['numPosts']." posts</td></tr>";
+	echo "<tr><td>".getAuthorLink($authorId)."</td><td>". $remarks_authors[$authorId]['count']." comments</td><td>".$remarks_authors[$authorId]['numPosts']." posts</td></tr>\n";
 }
 
 
@@ -13,13 +11,12 @@ function renderAuthorMatrixRow($authorId){
 function renderAuthorMatrix(){
 	global $remarks_authors;
 	
-	echo "<h3>Number of Comments per Author</h3>";
-	echo "<table  class='centralise'>";
-    echo "<tr><td><strong>Post Author</strong></td><td><strong>Number of Comments</strong></td><td><strong>Number of Posts</strong></td></tr>";
+	echo "<table class='centralise'>";
+    echo "<tr><td><strong>Post Author</strong></td><td><strong>Number of Comments</strong></td><td><strong>Number of Posts</strong></td></tr>\n";
 	foreach($remarks_authors as $authorKey => $eachAuthor){
 		renderAuthorMatrixRow($authorKey );
 	}
-    echo "</table>";
+    echo "</table>\n\n";
 }
 
 
@@ -28,6 +25,7 @@ function populateAuthorMatrixRow($authorID, $authorName){
 	global $wpdb;
 	global $remarks_authors;
 	global $remarks_posts;
+	global $remarks_authors_top;
 	
 	$retrievePosts = "SELECT ID FROM $wpdb->posts WHERE post_author = $authorID AND post_status='publish'";
 	$authors = $wpdb->get_results($retrievePosts, ARRAY_A);	
@@ -41,6 +39,8 @@ function populateAuthorMatrixRow($authorID, $authorName){
 	}
 	
 	$remarks_authors[$authorID] = array('numPosts' => $numPosts, 'count' => $numComments, 'name' => $authorName);
+	
+	remarks_handle_biggest_source($remarks_authors_top['label'], $remarks_authors_top['count'], $authorName, $numComments);
 }
 
 function authorsReorder($a, $b)
@@ -74,7 +74,7 @@ function drawAuthorsBars(){
 	}
 	$URL = $URL.'chart_title=Comment Breakdown By Author';
 
-	echo '<img src="'.$URL.'">';
+	echo '<img id="author_bar" alt="Bar Chart of Comments by Author" class="startHidden" src="'.$URL.'">';
 }
 
 function drawAuthorsPie(){
@@ -86,5 +86,5 @@ function drawAuthorsPie(){
 	}
 	$URL = $URL.'chart_title=Comment Breakdown By Author';
 
-	echo '<img src="'.$URL.'">';
+	echo '<img id="author_pie" alt="Pie Chart of Comments by Author" class="startHidden" src="'.$URL.'">';
 }

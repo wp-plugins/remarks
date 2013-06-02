@@ -5,25 +5,29 @@
 function renderCategoryMatrixRow($categoryID){
 	global $remarks_categories;
 	
-    echo "<tr><td><a href =".get_bloginfo('url').'/?category_name='.$remarks_categories[$categoryID]['slug'].">".$remarks_categories[$categoryID]['name']."</a></td><td align='center'>".$remarks_categories[$categoryID]['count']." comments</td><td align='center'>".$remarks_categories[$categoryID]['numPosts']." posts</td></tr>";
+    echo "\t<tr>\n";
+    echo "\t<td><a href =".get_bloginfo('url').'/?category_name='.$remarks_categories[$categoryID]['slug'].">".$remarks_categories[$categoryID]['name']."</a></td>\n";
+    echo "\t<td align='center'>".$remarks_categories[$categoryID]['count']." comments</td>\n";
+    echo "\t<td align='center'>".$remarks_categories[$categoryID]['numPosts']." posts</td>\n";
+    echo "</tr>\n";
 	
 }
 
 function renderCategoryMatrix(){
 	global $remarks_categories;
 	
-	echo "<h3>Number of Comments per Category</h3>";
 	echo "<table>";
-    echo "<tr><td><strong>Category Name</strong></a></td><td><strong>Number of Comments</strong></td><td><strong>Number of Posts</strong></td></tr>";
+    echo "<tr><td><strong>Category Name</strong></a></td><td><strong>Number of Comments</strong></td><td><strong>Number of Posts</strong></td></tr>\n";
 	foreach($remarks_categories as $categoryKey => $eachCategory){
 		renderCategoryMatrixRow($categoryKey);
 	}
-	echo "</table>";
+	echo "</table>\n\n";
 }
 
 function populateCategoryMatrixRow($categoryID, $name, $slug){
 	global $remarks_posts;
 	global $remarks_categories;
+	global $remarks_categories_top;
 
 	$numPosts = 0;
 	$numComments = 0;
@@ -43,6 +47,7 @@ function populateCategoryMatrixRow($categoryID, $name, $slug){
 	}
 
 	$remarks_categories[$categoryID] = array('name' => $name, 'numPosts' => $numPosts, 'count' => $numComments, 'slug' => $slug);
+	remarks_handle_biggest_source($remarks_categories_top['label'], $remarks_categories_top['count'], $name, $numComments);
 } // populateCategoryMatrixRow
 
 
@@ -76,9 +81,6 @@ function populateCategoryMatrix(){
 			
 		} 
 	}
-    
-
-    
     uasort($remarks_categories, "categoryReorder");
 
 } // populateCategoryMatrix
@@ -92,7 +94,7 @@ function drawCategoriesBars(){
 	}
 	$URL = $URL.'chart_title'."=Comment%20Breakdown%20By%20Category";
 
-	echo '<img src="'.$URL.'">';
+	echo '<img id="category_bar" alt="Bar Chart of Posts by Categories" class="startHidden" src="'.$URL.'">';
 }
 
 
@@ -105,7 +107,7 @@ function drawCategoriesPie(){
 	}
 	$URL = $URL.'chart_title'."=Comment%20Breakdown%20By%20Category";
 
-	echo '<img src="'.$URL.'">';
+	echo '<img id="category_pie" alt="Pie Chart of Posts by Categories" class="startHidden" src="'.$URL.'">';
 }
 
 ?>

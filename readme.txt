@@ -1,27 +1,20 @@
 === Plugin Name ===
 Contributors: Frag1 John
 Donate link: http://kiva.com
-Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis, geolocation, comment locations, comment geolocations, community
+Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis, geolocation, geomapping, comment locations, comment geolocations, community, targetting, discussion, feedback, map, demographics
 Requires at least: WP 3.1.1, GD Package
 Tested up to: 3.4.2
-Stable tag: 1.4
+Stable tag: 2.0
 
-Graph, charts, geolocations, and lists of comments by post author and category.
+Analysis of your site's comments, showing which posts, authors, and categories generate the most discussion with tables, charts and geolocation.
 
 == Description ==
 
-Remarks gives useful charts, tables, and geolocations of your blog's comments, and may help you to decide how to focus your blog for even greater comment harvesting. The breakdown that Remarks produces is accessible via the WordPress Admin menu.
+Remarks gives useful charts, tables, and geolocations of your blog's comments, and may help you to decide how to focus your blog for even greater comment harvesting.  You will be able to see which of your posts, categories, and authors generate the most discussion. The breakdowns that Remarks produces are accessible via the WordPress Admin menu.
 
-Hi, thanks for examining Remarks! First props have to go to the genius behind libchart http://naku.dohcrew.com/libchart/pages/introduction/. I'll be honest, I have made some minor cosmetic changes to his code, to make colours consistent and to remove some things that weren't desired for our purpose. 
+Remarks uses a slightly modified library called LibChart (http://naku.dohcrew.com/libchart/pages/introduction/) to draw bar and pie charts.
 
-Here at Frag1 we currently plan to employ line graphs to show you how the number of comments you've gained has increased overtime. That's still WIP, but we will release it as soon as we can. For now pie charts and bar graphs will have to do.
-
-Enjoy! Oh, and *all* feedback is really appreciated - please mail to john HAT frag1.co DOT uk.
-
-Intended Future Developments:
-
-1. Line charts to show the number of posts over time.
-
+All feedback is really appreciated - please mail to john HAT frag1.co DOT uk.
 
 == Installation ==
 
@@ -40,15 +33,19 @@ contact the Frag1 team at frag1.co.uk
 
 The PHP drawing package GD is required. Please contact your web administrator for assistance here.
 
+The interface uses jQuery
+
 == Screenshots ==
 
-1. This first screenshot shows the list breakdown of the Remarks "Posts" section, as well as where the Remarks link appears in the Admin menu (under 'Comments').
+1. This first screenshot shows the Overview Screen.
 
-2. The pie chart view of comments by Category shown by Remarks (source is the Frag1.co.uk blog!). The same data is also shown in bar chart, and in list view.
+2. This screen shows the posts ordered by the number of comments.
 
-3. This screen shows the entire Comments by Author section of the Remarks output for the frag1.co.uk site. 
+3. This screen shows the Categories section, specifically the Table of information. 
 
-4. This screen shows the latest Geolocation of comments section.
+4. This screen shows which Authors have the most comments.
+
+5. This screen shows the Geolocation of the comments.
 
 == Changelog ==
 
