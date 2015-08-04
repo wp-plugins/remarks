@@ -2,7 +2,7 @@
 Contributors: CiviFirst John
 Donate link: http://kiva.com
 Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis, geolocation, geomapping, comment locations, comment geolocations, community, targetting, discussion, feedback, map, demographics
-Requires at least: WP 3.1.1
+Requires at least: 3.1.1
 Tested up to: 4.2.4
 Stable tag: 3.0
 
