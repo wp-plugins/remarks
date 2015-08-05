@@ -1,15 +1,15 @@
 <?php
 /*
 	Plugin Name: Remarks
-	Plugin URI: http://www.frag1.co.uk/
+	Plugin URI: http://www.civifirst.com
 	Description: Analyse the number of comments you get by post, category and author. Uses graphs!
-	Version: 2.0
-	Author: Frag1 John
-	Author URI: http://www.frag1.co.uk
+	Version: 3.0
+	Author: CiviFirst John
+	Author URI: http://www.civifirst.com
 	License: GPL2
 */
 
-/*  Copyright 2013  Frag1 John  (email : john@frag1.co.uk)
+/*  Copyright 2013  CiviFirst John  (email : john@civifirst.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 

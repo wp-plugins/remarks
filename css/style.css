@@ -1,9 +1,11 @@
-
-#wpwrap, #wpcontent, #wpbody, #wpbody-content
+#wpwrap, 
+#wpcontent,
+#wpbody, 
+#wpbody-content
 {
-	height: 100%;
+	min-height: 100%;
+	background-color: #FFFFFF;
 }
-
 
 /*
 	MAIN NAVIGATION 
@@ -85,6 +87,7 @@
 	min-height: 25px;
 	max-height: 25px;
 	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 #about_button
@@ -94,6 +97,7 @@
 	max-height: 25px;
 	padding: 0px;
 	padding-top: 5px;
+	padding-bottom: 5px;
 	min-width: 22%;
 }
 
@@ -179,12 +183,12 @@
 /* 
   SECTIONS
 */
-/*about
+about
 {
 	background-color: #EEEEEE;
 	width: 60%;
 	padding: 5px;
-}*/
+}
 
 
 /*
@@ -283,7 +287,6 @@ img
 /*
 	FONTS
 */
-
 h4
 {
 	margin: 0px;

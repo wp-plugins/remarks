@@ -1,10 +1,10 @@
 === Plugin Name ===
-Contributors: Frag1 John
+Contributors: CiviFirst (John Kirk)
 Donate link: http://kiva.com
 Tags: comments, comments analysis, comments review, popular, remarks, meta, metrics, information, analysis, geolocation, geomapping, comment locations, comment geolocations, community, targetting, discussion, feedback, map, demographics
-Requires at least: WP 3.1.1, GD Package
-Tested up to: 3.4.2
-Stable tag: 2.0
+Requires at least: 3.1.1
+Tested up to: 4.2.4
+Stable tag: 3.0
 
 Analysis of your site's comments, showing which posts, authors, and categories generate the most discussion with tables, charts and geolocation.
 
@@ -14,7 +14,7 @@ Remarks gives useful charts, tables, and geolocations of your blog's comments, a
 
 Remarks uses a slightly modified library called LibChart (http://naku.dohcrew.com/libchart/pages/introduction/) to draw bar and pie charts.
 
-All feedback is really appreciated - please mail to john HAT frag1.co DOT uk.
+All feedback is really appreciated - please mail to john HAT civifirst DOT com
 
 == Installation ==
 
@@ -27,7 +27,7 @@ All feedback is really appreciated - please mail to john HAT frag1.co DOT uk.
 
 = What should I do if the installation fails? =
 
-contact the Frag1 team at frag1.co.uk
+contact the CiviFirst team at john@civifirst.com
 
 = Do I need to have anything installed for the graphs etc to work? =
 
@@ -48,6 +48,12 @@ The interface uses jQuery
 5. This screen shows the Geolocation of the comments.
 
 == Changelog ==
+= 3.0 =
+* Upgraded to match WP v 4.2.4.
+* Rebranded
+
+= 2.0 =
+* Entirely new interface.
 
 = 1.3 =
 * Moved away from hostIP to FreeGeoIP. This resulted in a greater number of non UK posts being geolocated correctly (100% of our sample was placed right).
@@ -64,6 +70,12 @@ The interface uses jQuery
 
 
 == Upgrade Notice ==
+= 3.0 =
+* Upgraded to match WP v 4.2.4.
+
+= 2.0 =
+* Entirely new interface.
+
 = 1.3 =
 * Moved away from HostIP to FreeGeoIP. This resulted in a greater number of non UK posts being geolocated correctly (100% of our sample was placed right).
 * Fixed a minor bug with the geolocation button.
